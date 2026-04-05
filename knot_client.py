@@ -73,7 +73,7 @@ def start_receiver(port, mode):
         except Exception as e: print(f"Error Receptor: {e}")
     threading.Thread(target=run, daemon=True).start()
 
-def send_json(command, value, port_val=None):
+def send_json(command, value, port_val=0):
     """Envía comandos de control al puerto JSON del Daemon."""
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
